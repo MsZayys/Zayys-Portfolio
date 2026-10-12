@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zayys — Web Designer & Artist</title>
+<meta name="description" content="Zayys is a creative web designer, artist and entrepreneur. Explore websites, creative projects and brands from a dreamy purple universe.">
+<meta property="og:title" content="Zayys — Web Designer & Artist">
+<meta property="og:description" content="Websites, creative projects and brands by Zayys.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120a24">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c3aed'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='serif'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Manrope:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loader" aria-hidden="true"><span>Zayys</span></div>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="aura a1" aria-hidden="true"></div><div class="aura a2" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="#home" aria-label="Zayys, home">Zayys</a>
+  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+  <nav id="menu" aria-label="Main">
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
+    <a href="#businesses">Businesses</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+<section id="home" class="hero">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hero-copy">
+    <h1 aria-label="Hi, I'm Zayys.">Hi, I'm <span class="big" id="name">Zayys.</span></h1>
+    <p class="sub">A creative web designer and artist building soft, glowing corners of the internet.</p>
+    <div class="cta">
+      <a class="btn primary magnetic" href="#about">Explore my world</a>
+      <a class="btn ghost magnetic" href="#projects">View my projects</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <h2 class="rv">About me</h2>
+  <div class="glass project aboutbox rv">
+    <div class="prose">
+      <p>I'm Zayys — an 11th-grade student from Pakistan, a scriptwriter, web designer, developer, artist, and aspiring entrepreneur.</p>
+      <p>I have a deep passion for Computer Science, and I genuinely love designing and developing websites that turn imagination into digital realities.</p>
+      <p>I started my creative journey in 2023. Since then, I have focused on web design, development, and scriptwriting, alongside building and launching my projects like <a href="https://mszayys.github.io/The-Quiet-Shelf/" target="_blank" rel="noopener" style="color: var(--glow);">A Quiet Shelf</a> (my novel publishing space) and my handmade brand <a href="https://mszayys.github.io/charmsbyzayys/" target="_blank" rel="noopener" style="color: var(--glow);">Charms by Zayys</a>.</p>
+      <p>My goal is to create unique websites and expand my independent businesses further in the future.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="sec">
+  <h2 class="rv">Projects</h2>
+  <div class="grid" id="projectGrid"></div>
+</section>
+
+<section id="skills" class="sec">
+  <h2 class="rv">Skills</h2>
+  <ul class="chips rv" id="skillList"></ul>
+</section>
+
+<section id="businesses" class="sec">
+  <h2 class="rv">Businesses</h2>
+  <div class="grid" id="bizGrid"></div>
+</section>
+
+<section id="journey" class="sec">
+  <h2 class="rv">Journey</h2>
+  <ol class="timeline" id="timeline"></ol>
+</section>
+
+<section id="contact" class="sec center">
+  <h2 class="rv">Message me for work</h2>
+  <p class="rv">Need a website, a custom design or a creative collaboration? Send me an email and tell me about your idea.</p>
+  <div class="cta rv">
+    <a class="btn primary magnetic" id="mailBtn" href="mailto:mszayys@gmail.com?subject=Work%20enquiry">Message me for work</a>
+  </div>
+  <p class="note">Or write to <a id="mailLink" href="mailto:mszayys@gmail.com">mszayys@gmail.com</a></p>
+</section>
+</main>
+
+<footer>
+  <span class="logo">Zayys</span>
+  <nav aria-label="Footer"><a href="#home">Top</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+  <span class="moon" aria-hidden="true"></span>
+  <small>© <span id="yr"></span> Zayys</small>
+</footer>
+
+<dialog id="dlg"><button class="close" aria-label="Close">✕</button><div id="dlgBody"></div></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
