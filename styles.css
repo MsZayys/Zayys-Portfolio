@@ -75,12 +75,89 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
 dialog img{width:100%;display:block;max-height:70vh;object-fit:contain}
 #dlgBody .txt{padding:1.2rem 1.6rem 1.8rem}
 .close{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(18,10,36,.8);color:#fff;cursor:pointer;z-index:2}
+/* ===== RESPONSIVE ===== */
+
+/* Large screens */
+@media(min-width:1400px){
+  body{font-size:1.15rem}
+  .sec{max-width:1240px}
+  h1{font-size:3.6rem}
+  .hero-copy{max-width:1000px}
+}
+
+/* Tablets and small laptops */
+@media(max-width:1024px){
+  .sec{padding-top:90px}
+  .nav nav{gap:1.1rem}
+  .project.featured .txt{padding:1.5rem}
+}
+
+/* Phones and narrow windows */
 @media(max-width:760px){
-.burger{display:block}
-.nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 5vw;background:var(--bg2)}
-.nav nav.open{display:flex}
-.project.featured{grid-template-columns:1fr}.project.featured img{min-height:0;aspect-ratio:16/10}
-.hero-copy{justify-self:center}}
-@media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}*{animation:none!important;transition:none!important}
-.rv,#name span{opacity:1;transform:none}}
+  html{scroll-padding-top:64px}
+  body{font-size:1rem;line-height:1.65}
+
+  /* nav */
+  .nav{padding:12px 5vw;padding-top:max(12px,env(safe-area-inset-top))}
+  .logo{font-size:1.4rem}
+  .burger{display:block;min-width:44px;min-height:44px}
+  .nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:.5rem 5vw 1rem;background:rgba(28,16,56,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(185,164,255,.2)}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:14px 4px;font-size:1.05rem;border-bottom:1px solid rgba(185,164,255,.1)}
+
+  /* hero: lotus on top, text at the bottom */
+  .hero{min-height:100svh;min-height:100dvh;align-items:end;padding:90px 6vw 56px}
+  .hero-copy{justify-self:center;text-align:center;max-width:100%}
+  h1{font-size:clamp(2.1rem,9vw,2.8rem)}
+  .sub{margin:1rem auto 1.6rem;font-size:1.05rem;max-width:28ch;text-shadow:0 2px 14px rgba(18,10,36,.9)}
+  .cta{justify-content:center;gap:12px}
+  .hero .btn{flex:1 1 220px;text-align:center}
+
+  /* sections */
+  .sec{padding:70px 6vw 24px}
+  h2{margin-bottom:1.4rem}
+  .aboutbox{padding:1.4rem 1.3rem}
+  .grid{grid-template-columns:1fr;gap:18px}
+  .project.featured{grid-template-columns:1fr}
+  .project.featured img{height:auto;min-height:0;aspect-ratio:16/10}
+  .project.featured .txt{padding:1.2rem 1.3rem 1.4rem}
+  .badge{top:10px;left:10px;font-size:.75rem}
+  .actions .btn{flex:1 1 140px;text-align:center}
+  .chips{gap:10px}.chips li{padding:8px 16px;font-size:.95rem}
+  .timeline{padding-left:22px}
+  .timeline li::before{left:-31px}
+
+  /* contact */
+  .sec.center .btn{width:100%;text-align:center}
+  .note{word-break:break-word}
+
+  /* footer */
+  footer{flex-direction:column;text-align:center;padding:44px 6vw max(32px,env(safe-area-inset-bottom));margin-top:50px}
+
+  /* dialog */
+  dialog{width:94vw;max-height:88vh;overflow-y:auto}
+  dialog img{max-height:45vh}
+
+  /* lighter effects = smoother scrolling */
+  .aura{filter:blur(60px);opacity:.28}
+  .glass{backdrop-filter:blur(8px)}
+}
+
+/* Very small phones */
+@media(max-width:380px){
+  h1{font-size:1.9rem}
+  .btn{padding:12px 20px}
+  .sub{font-size:1rem}
+}
+
+/* Short landscape phones */
+@media(max-height:480px) and (orientation:landscape){
+  .hero{min-height:auto;padding:80px 6vw 40px}
+}
+
+/* Touch devices: no sticky hover effects, bigger tap targets */
+@media(hover:none){
+  .card:hover,.card:focus-visible{transform:none;box-shadow:none}
+  .project:hover img{transform:none}
+  .btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center}
+}

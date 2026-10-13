@@ -195,7 +195,7 @@ if (fine && !reduce) {
 
     function fit() {
       const w = cv.clientWidth, h = cv.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
-      group.position.x = w > 800 ? 3 : 0; group.position.y = w > 800 ? 0 : -1.4; group.scale.setScalar(w > 800 ? 1 : .75);
+      group.position.x = w > 800 ? 3 : 0; group.position.y = w > 800 ? 0 : 1.3; group.scale.setScalar(w > 800 ? 1 : w < 420 ? .62 : .75);
     }
     addEventListener("resize", fit); fit();
     let vis = true; new IntersectionObserver(e => vis = e[0].isIntersecting).observe(cv);
